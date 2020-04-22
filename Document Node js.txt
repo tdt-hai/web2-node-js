@@ -1,0 +1,13 @@
+cách upload npm package: 
+B1: vào folder chọn npm init
+B2: chọn npm login
+B3: npm publish
+---------------------------------------------------------------------------------------------------------------------------------
+				--------Cài bộ khung express generator (Tự tạo bộ khung express)------------
+B1: npm install express-generator -g (Cài bộ khung xuống ổ C làm 1 lần duy nhất)
+B2: express <ten folder> (tạo bộ khung express với tên folder)
+B3: Gõ lệnh npm install (để cài đặt tất cả các plugin còn thiếu)
+
+                               --------Cài template EJS------------------------------------------
+B1: express <ten folder> -e 
+B2: npm install (cài đặt các plugin phụ thuộc)
