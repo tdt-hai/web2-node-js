@@ -11,3 +11,14 @@ B3: Gõ lệnh npm install (để cài đặt tất cả các plugin còn thiế
                                --------Cài template EJS------------------------------------------
 B1: express <ten folder> -e 
 B2: npm install (cài đặt các plugin phụ thuộc)
+
+------------Một số lưu ý khi cài session
+B1: lệnh cài npm install express-session
+B2: vào app.js thêm 
+	- var session = require('express-session')
+	- //session (thêm sau cookieParser)
+          app.use(session({
+           secret: 'keyboard cat',
+           resave: false,
+           saveUninitialized: true
+          }))
