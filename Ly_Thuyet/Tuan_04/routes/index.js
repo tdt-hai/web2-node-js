@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 // Thêm danh sách công việc cần làm
 router.post('/addtask', function(req,res){
     var addtask = req.body.newtask;
-    var newTask = todo.add(addtask);
+    todo.add(addtask);
     res.redirect("/");
 })
 //Danh sách công việc đã hoàn thành

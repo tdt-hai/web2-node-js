@@ -1,0 +1,20 @@
+<%- include('header'); -%>
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Mail</th>
+      <th scope="col">Phonenumber</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%for(var i = 0 ; i< display.name.length ; i++){%>
+    <tr>
+      <td><%= display.name[i]%></td>
+      <td><%= display.email[i]%></td>
+      <td><%= display.sdt[i]%></td>
+    </tr>
+    <% }%>
+  </tbody>
+</table>
+<%- include('footer'); -%>
