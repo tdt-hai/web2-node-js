@@ -1,0 +1,39 @@
+<%- include('header'); -%>
+      <% if ( !id) {%>
+      <h1 class="text-default" >Xin chào khách  đã đến với Todo app. Vui lòng đăng nhập để tiếp tục </h1>
+      <% } else {%>
+      <div style="text-align: center;">
+      <h1>Xin chào <strong><%= id.username %></strong> đã đến với Todo app </h1>
+            <h2> Các công việc cần làm cho ngày <strong><%= date %></strong></h2>
+      </div>
+      <form action ="/addtask" method="POST">
+      <!-- Material input -->
+            <div class="md-form">
+             <div class="input-group input-group-sm mb-0">
+                        <input type="text" id="form1" name="newtask" class="form-control">
+                        <label for="form1">What need to be done ?</label>
+                        <div class="input-group-append">
+                              <input class="btn btn-primary" type="submit" value="Thêm">
+                        </div>
+                  </div>
+            </div>
+            <h2> Danh sách các công việc chưa hoàn thành </h2>
+            <!-- Default inline 1-->
+                  <% for( var i = 0; i < exportTodo.length ; i++){ %>
+                    <ul> 
+                      <li>
+                        <label> <p  class="text-danger"><%= exportTodo[i].name %></p></label>
+                        <a type="button" class="btn btn-success" href="/<%= exportTodo[i].id %>/done" role="button">Đã xong</a>
+                        </li>
+                    </ul>
+                  <% } %>
+      </form>
+      <h2> Danh sách các công việc đã hoàn thành </h2>
+                  <% for( var i = 0; i < complete.length ; i++){ %>
+                    <label class="haha"><p class="text-success"><%= complete[i].name %></p>
+                              <input type="checkbox" checked>
+                              <span class="checkmark"></span>
+                    </label>
+                  <% } %>
+      <% } %>
+<%- include('footer'); -%>
