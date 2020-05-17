@@ -16,37 +16,40 @@ class User extends Model {
             }
         });
     }
-    static verifypass(password,passhash){
+    static  verifypass(password,passhash){
         return bcrypt.compareSync(password, passhash);
     }
-    static hashpass(password){
+    static  hashpass(password){
         return bcrypt.hashSync(password, 10);
     }
 }
 User.init({
   // attributes
-  email: {
+    email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
+    },
+    password: {
+        type: Sequelize.STRING,
+        allowNull: false
+        // allowNull defaults to true
+    },
+    phone:{
     type: Sequelize.STRING,
-    allowNull: false,
-    unique: true
-  },
-  displayname: {
-    type: Sequelize.STRING,
-    allowNull: false,
-    unique: true
-  },
-  password:{
-    type: Sequelize.STRING,
-    allowNull: false
-    // allowNull defaults to true
-  },
-  token: {
-    type: Sequelize.STRING,
-  }
-}, {
+    },
+    displayname: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
+    },
+    token: {
+        type: Sequelize.STRING,
+      }
+}, 
+{
   sequelize: db,
   modelName: 'user'
-  // options
 });
 
 module.exports = User;

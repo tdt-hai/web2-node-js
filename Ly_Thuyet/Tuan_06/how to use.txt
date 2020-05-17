@@ -5,6 +5,7 @@ npm install cookie-session --save
 npm install bcrypt --save
 
 #install protgre sql
+
 npm install sequelize
 npm install pg pg-hstore --save
 

@@ -5,8 +5,9 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('tuan-05:server');
+var debug = require('debug')('tuan-04:server');
 var http = require('http');
+//require 
 var db = require('../services/db');
 
 /**
@@ -25,6 +26,10 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
+
+
+ 
+//Kết nối database =============================================================
 db.sync().then(function(){
   server.listen(port);
   console.log('server is listening is ' + port);
@@ -33,6 +38,8 @@ db.sync().then(function(){
 })
 server.on('error', onError);
 server.on('listening', onListening);
+//===============================================================================
+
 
 /**
  * Normalize a port into a number, string, or false.
