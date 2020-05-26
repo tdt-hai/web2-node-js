@@ -1,0 +1,27 @@
+<%- include('header'); -%>
+ <center> <h1>Thêm hội nghị</h1> </center>
+<form action = "/addreference" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Tên hội nghị</label>
+    <input type="text" class="form-control"  name="name" aria-describedby="emailHelp" placeholder="Ten hoi nghi">
+  </div>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Mô tả</label>
+    <input type="text" class="form-control"  name="content" aria-describedby="emailHelp" placeholder="Mo ta">
+  </div>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Mô tả chi tiết</label>
+    <input type="text" class="form-control" id="ten" name="detail" aria-describedby="emailHelp" placeholder="Mo ta chi tiet">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Thời gian tổ chức </label>
+    <input type="date" class="form-control" name = "time" placeholder="Thoi gian">
+  </div>
+  <div>
+        <button type="submit" class="btn btn-primary">Xác nhận</button>
+  </div>
+</form>
+  <div>
+        <center><button type="button"><a class="nav-link" href="/">Quay lại</a></button></center>
+   </div>
+<%- include('footer'); -%>
