@@ -1,0 +1,23 @@
+
+           <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Tiêu đề</th>
+                    <th scope="col">Tóm tắt</th>
+                    <th scope="col">Link</th>
+                    <th scope="col">Nguồn</th>
+                    <th scope="col">Ngày đăng</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% for(var i = 0 ; i< display.length ; i++){%>
+                  <tr>
+                    <td><strong><%= display[i].title%></strong></td>
+                    <td><%= display[i].content%></td>
+                    <td><strong><a href="<%= display[i].link%>" target="_blank"><%= display[i].link%></a></strong></td>
+                    <td><strong><%= display[i].source%></strong></td>
+                    <td><%= display[i].pubDate%></td>
+                  </tr>
+                  <% }%>
+                </tbody>
+              </table>

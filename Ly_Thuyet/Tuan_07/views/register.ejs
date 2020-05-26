@@ -1,0 +1,31 @@
+<%- include('header'); -%>
+
+<!-- Default form login -->
+<form class="text-center border border-light p-5" method="POST" style="text-align: center;">
+
+    <p class="h4 mb-4">Đăng kí</p>
+
+    <!-- Email -->
+    <input type="email" id="email" name="email" class="form-control mb-4" placeholder="Email">
+
+    <!-- Ten hiển thị -->
+    <input type="text" id="displayname" name="displayname" class="form-control mb-4" placeholder="Tên hiển thị">
+
+    <!-- Password -->
+    <input type="password" id="password" name="password" class="form-control mb-4" placeholder="Mật khẩu">
+
+    <!-- Sign in button -->
+    <button class="btn btn-info btn-block my- 4" type="submit">Đăng kí</button>
+    <!-- Social login -->
+    <p>or sign in with:</p>
+
+    <a href="https://www.facebook.com/tdthai99" target="_blank" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
+    <a href="#" class="mx-2" role="button"><i class="fab fa-twitter light-blue-text"></i></a>
+    <a href="#" class="mx-2" role="button"><i class="fab fa-linkedin-in light-blue-text"></i></a>
+    <a href="#" class="mx-2" role="button"><i class="fab fa-github light-blue-text"></i></a>
+
+</form>
+<!-- Default form login -->
+
+
+<%- include('footer'); -%>

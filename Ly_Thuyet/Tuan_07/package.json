@@ -1,0 +1,30 @@
+{
+  "name": "tuan-07",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "bluebird": "^3.7.2",
+    "cookie-parser": "~1.4.4",
+    "cookie-session": "^1.4.0",
+    "cron": "^1.8.2",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.3",
+    "express": "~4.16.1",
+    "express-async-handler": "^1.1.4",
+    "express-validator": "^6.5.0",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.0",
+    "nodemailer": "^6.4.6",
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "rss-parser": "^3.8.0",
+    "sequelize": "^5.21.10"
+  }
+}

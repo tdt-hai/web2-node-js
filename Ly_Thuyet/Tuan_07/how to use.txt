@@ -1,0 +1,31 @@
+#install cookie-session
+npm install cookie-session --save
+
+#install bcrypt
+npm install bcrypt --save
+
+#install protgre sql
+
+npm install sequelize
+npm install pg pg-hstore --save
+
+npm install --save express-async-handler
+
+#Mailer
+npm install nodemailer --save
+
+#validator
+npm install --save express-validator
+
+Sử dụng node validator
+
+edit file register and email để chạy trên local
+
+##################################
+npm install node-fetch --save //Dùng để lấy dữ liệu từ trang web
+
+npm install --save rss-parser //dùng để lấy thông tin từ trang web RSS
+
+npm install bluebird --save // lặp dữ liệu
+
+npm install --save node-cron //Dùng để hẹn giờ lặp lịch
