@@ -11,7 +11,7 @@ const TUOITRE_RSS = 'https://tuoitre.vn/rss/tin-moi-nhat.rss';
 const THANHNIEN_RSS = 'https://thanhnien.vn/rss/home.rss';
 const RSS = [VNEXPRESS_RSS,TUOITRE_RSS,THANHNIEN_RSS];
 
-const job = new CronJob('0 */30 * * * *',function() { //Chạy sau mỗi 30p
+//const job = new CronJob('0 */30 * * * *',function() { //Chạy sau mỗi 30p
     db.sync().then(async function(){
         await Bluebird.each(RSS ,async function(rss){
     
@@ -63,7 +63,7 @@ const job = new CronJob('0 */30 * * * *',function() { //Chạy sau mỗi 30p
         })
     }).catch(console.error);
 
-})
-job.start();
+//})
+//job.start();
 
 module.exports = Article;

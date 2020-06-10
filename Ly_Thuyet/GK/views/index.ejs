@@ -1,0 +1,41 @@
+<%- include('header'); -%>
+      <% if (!id) {%>
+      <h1 class="text-default" >Xin chào khách  đã đến với Todo app. Vui lòng đăng kích để tiếp tục </h1>
+      <% } else if (id && id.token != null){ %>
+        <h1 class="text-default" >Bạn chưa kích hoạt tài khoản.Vui lòng kiểm tra email</h1>
+      <% } else {%>
+      <div style="text-align: center;">
+      <h1>Xin chào <strong><%= id.displayname %></strong> đã đến với tour </h1>
+            <h2>Ngày <strong><%= date %></strong></h2>
+            
+            <form action="/add" method= "POST">
+                  <input type="text"  name="ma" class="form-control mb-4" placeholder="Mã tour">
+                  <input type="text"  name="ten" class="form-control mb-4" placeholder="Tên tour">
+                  <label for="cars">Thể loại:</label></br> 
+                  <select class="browser-default custom-select" name = "theloai">
+                  <option value="Nghi duong">Nghỉ dưỡng</option>
+                  <option value="Kham pha">Khám phá</option>
+                  <option value="Hanh huong">Hành hương</option>
+                  </select>
+                  <br><br>
+                   <label for="cars">Công ty du lịch:</label></br> 
+                  <select class="browser-default custom-select" name = "cty">
+                  <option value="Vietravel">Vietravel</option>
+                  <option value="Saigon Tourist">Saigon Tourist</option>
+                  <option value="NhaTrang Tourist">NhaTrang Tourist</option>
+                  </select>
+                  <br><br>
+                  <input type="submit" value="Submit">
+            </form>
+            </br>
+            <label>Ảnh</label>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                  <div class="custom-file">
+                  <input type="file" name="photo" class="custom-file-input" id="customFile">
+                  <label class="custom-file-label" for="customFile">Choose file</label>
+                  <input type="submit" value="upload">
+                  </div>
+            </form>
+      </div>
+      <% } %>
+<%- include('footer'); -%>

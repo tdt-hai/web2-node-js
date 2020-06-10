@@ -1,0 +1,42 @@
+<%- include('header'); -%>
+  <h1>Danh sách người đăng kí tham gia hội nghị</h1>
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Mail</th>
+      <th scope="col">Tên hiển thị</th>
+      <th scope="col">Số điện thoại</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for(var i = 0 ; i< display.length ; i++){%>
+    <tr>
+      <td><%= display[i].email%></td>
+      <td><%= display[i].displayname%></td>
+      <td><%= display[i].phone%></td>
+    </tr>
+    <% }%>
+  </tbody>
+</table>
+<h1>Danh sách hội nghị</h1>
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tên hội nghị</th>
+      <th scope="col">Mô tả</th>
+      <th scope="col">Mô tả chi tiết</th>
+      <th scope="col">Thời gian tổ chức</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for(var i = 0 ; i< display_conference.length ; i++){%>
+    <tr>
+      <td><%= display_conference[i].name%></td>
+      <td><%= display_conference[i].content%></td>
+      <td><%= display_conference[i].detail%></td>
+      <td><%= display_conference[i].time%></td>
+    </tr>
+    <% }%>
+  </tbody>
+</table>
+<%- include('footer'); -%>

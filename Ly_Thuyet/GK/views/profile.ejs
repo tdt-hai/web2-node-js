@@ -1,0 +1,22 @@
+<%- include('header'); -%>
+
+<!-- Default form login -->
+<form class="text-center border border-light p-5" action="profile" method="POST" style="text-align: center;">
+
+    <p class="h4 mb-4">Đổi thông tin cá nhân</p>
+
+    <!-- Email -->
+    <input type="text"  name="displayname" class="form-control mb-4" placeholder="Tên hiển thị" value = '<%= id.displayname %>'>
+
+    <!-- Password -->
+    <input type="password"  name="password" class="form-control mb-4" placeholder="Mật khẩu">
+
+    <!-- Sign in button -->
+    <button class="btn btn-info btn-block my- 4" type="submit">Đổi</button>
+    <!-- Social login -->
+
+</form>
+<!-- Default form login -->
+
+
+<%- include('footer'); -%>
