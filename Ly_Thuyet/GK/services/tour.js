@@ -6,9 +6,6 @@ const Sequelize = require('sequelize');
 const Model = Sequelize.Model;
 
 class Tour extends Model {
-    static async finduserbyid(){
-        return Survey.findAll();
-    }
     static addTour(Ma,Ten,TheLoai,CongTy){
         return Tour.create({Ma: Ma,Ten: Ten, TheLoai: TheLoai, Cty: CongTy});
     }
