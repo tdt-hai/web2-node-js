@@ -1,13 +1,12 @@
 <%- include('header'); -%>
       <% if (!id) {%>
+      <h3 style="display: inline-flex;">Hôm nay là ngày:&nbsp<p><strong><%= date %>&nbsp<%=time %></strong></p> </h3> 
       <h1 class="text-default" >Xin chào khách đã đến với trang thông tin mới nhất về covid-19. Vui lòng đăng kí để nhận thông báo mới nhất từ chúng tôi </h1>
       <% } else if (id && id.token != null){ %>
         <h1 class="text-default" >Bạn chưa kích hoạt tài khoản.Vui lòng kiểm tra email</h1>
       <% } else { %>
-      <h1 class="text-default" >Xin chào <strong><%= id.displayname %></strong> đã đến với trang web chúng tôi sẽ gửi thông tin covid mới nhất cho bạn</h1>
-      <form class="text-center border border-light p-5" method="POST" style="text-align: center;">
-          <button class="btn btn-info btn-block my- 4" type="submit">Nhận thông tin mới nhất</button>
-      </form>  
+      <h3 style="display: inline-flex;">Hôm nay là ngày:&nbsp<p><strong><%= date %>&nbsp<%=time %></strong></p> </h3> 
+      <h1 class="text-default" >Xin chào <strong><%= id.displayname %></strong> đã đến với trang web chúng tôi sẽ gửi thông tin covid mới nhất cho bạn vào <strong>6:00 AM</strong> </h1>
       <% } %>
      <table class="table">
                 <thead>

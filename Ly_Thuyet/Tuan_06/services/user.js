@@ -32,8 +32,9 @@ User.init({
   },
   displayname: {
     type: Sequelize.STRING,
-    allowNull: false,
-    unique: true
+    allowNull: true,
+    unique: true,
+    //primaryKey: true : chỉ định khóa chính 
   },
   password:{
     type: Sequelize.STRING,

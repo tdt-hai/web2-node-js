@@ -6,6 +6,9 @@ const Sequelize = require('sequelize');
 const Model = Sequelize.Model;
 
 class User extends Model {
+  static async findAllUser(){
+    return User.findAll();
+  }
     static async finduserbyid(id){
         return User.findByPk(id);
     }

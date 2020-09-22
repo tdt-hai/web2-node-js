@@ -16,29 +16,45 @@ router.get('/', asyncHandler (async function(req, res, next) {
 }));
 
 //add câu 1
-router.post('/add', asyncHandler( async function(req,res){
-    const Ma = req.body.ma;
-    const Ten = req.body.ten;
-    const TheLoai = req.body.theloai;
-    const Congty = req.body.cty;
-    await tour.addTour(Ma,Ten,TheLoai,Congty);
-    res.redirect("/");
-}));
+// router.post('/add', asyncHandler( async function(req,res){
+//     const Ma = req.body.ma;
+//     const Ten = req.body.ten;
+//     const TheLoai = req.body.theloai;
+//     const Congty = req.body.cty;
+//     await tour.addTour(Ma,Ten,TheLoai,Congty);
+//     res.redirect("/");
+// }));
 
 //Upload file
-var upload = multer({ dest: '/tmp/'});
+// var upload = multer({ dest: '/tmp/'});
 
-router.post('/upload', upload.single('photo'),asyncHandler (async function(req, res) {
-  var id =  await user.finduserbyid(req.session.id);
-  var img_name = id.id;
-  var file = './public/images' + '/' + img_name + '.png';
-  fs.rename(req.file.path, file, function(err) {
-    if (err) {
-      res.send(500);
-    } else {
-      res.redirect('/');
-    }
+// router.post('/upload', upload.single('photo'),asyncHandler (async function(req, res) {
+//   var id =  await user.finduserbyid(req.session.id);
+//   var img_name = id.id;
+//   var file = './public/images' + '/' + img_name + '.png';
+//   fs.rename(req.file.path, file, function(err) {
+//     if (err) {
+//       res.send(500);
+//     } else {
+//       res.redirect('/');
+//     }
+//   });
+// }));
+var storage = multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, './public/images');
+  },
+  filename: function (req, file, callback) {
+    callback(null, '1' + '-' + Date.now() + '.png');
+  }
+});
+var upload = multer({ storage : storage }).array('userPhoto',2);
+router.post('/upload',function(req,res){
+  upload(req,res,function(err) {  
+      if(err) {
+          return res.end("Error uploading file.");
+      }
+      res.end("File is uploaded");
   });
-}));
-
+});
 module.exports = router;

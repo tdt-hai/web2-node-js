@@ -26,7 +26,9 @@ app.use(cookieParser());
 //Use session
 app.use(cookieSession({
   name: 'session',
-  keys: ['123456']
+  keys: ['123456'],
+  // Cookie Options
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }))
 app.use(express.static(path.join(__dirname, 'public')));
 

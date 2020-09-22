@@ -9,6 +9,10 @@ const asyncHandler = require('express-async-handler');
 router.get('/', asyncHandler (async function(req, res, next) {
   const title = "BTCN06-Todo app";
   var today = new Date();
+  //res.json(await todo.findtest(2));
+  const test = await todo.findtest(2);
+  console.log(test.email);
+  //console.log('test la :' + await todo.findtest(1));
   var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
   var id = await user.finduserbyid(req.session.id);
   if(id)
@@ -17,7 +21,8 @@ router.get('/', asyncHandler (async function(req, res, next) {
     const exportTodo = await todo.findallnotdone(req.session.id);
     //Xuất danh sách công việc đã hoàn thành
     const complete = await todo.findalldone(req.session.id);
-    res.render('index', { id,title,date,exportTodo,complete});
+    //console.log(exportTodo[1].name);
+    res.render('index', { id,title,date,exportTodo,complete, test});
   }
   else
   {
@@ -36,8 +41,9 @@ router.get('/:id/done', asyncHandler(async function(req,res) {
 }))
 // Thêm danh sách công việc cần làm
 router.post('/addtask', asyncHandler( async function(req,res){
+    //res.json(req.session.id);
     var addtask = req.body.newtask;
-    todo.add(addtask,req.session.id);
+    todo.add(addtask,'hai',req.session.id);
     res.redirect("/");
 }));
 module.exports = router;
